@@ -11,6 +11,9 @@ permissions:
 jobs:
   run-fetch:
     runs-on: ubuntu-latest
+    env:  # ✅ 注入 API 密钥
+      NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
+      GNEWS_KEY: ${{ secrets.GNEWS_KEY }}
 
     steps:
       - name: Checkout repo
