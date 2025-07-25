@@ -2,8 +2,11 @@ name: Daily News Fetch
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 每天 UTC 0 点（北京时间早上 8 点）
+    - cron: '0 3 * * *'  # ✅ 每天 UTC 3点（北京时间上午11点）
   workflow_dispatch:
+
+permissions:
+  contents: write  # 必须有权限提交回仓库
 
 jobs:
   run-fetch:
